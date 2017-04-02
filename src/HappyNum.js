@@ -1,4 +1,4 @@
-// Given a number return array containing each digit of the number
+// Given an arbitrary number return array containing each digit of the number
 function singleDigits(num) {
   return num
           .toString()
