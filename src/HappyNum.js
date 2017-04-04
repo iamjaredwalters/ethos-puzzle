@@ -1,5 +1,5 @@
 // Given an arbitrary number return array containing each digit of the number
-function singleDigits(num) {
+function sum(num) {
   return num
           .toString()
           .split('')
@@ -8,4 +8,4 @@ function singleDigits(num) {
           }, 0);
 }
 
-export default singleDigits;
+export default sum;

@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import singleDigit from './HappyNum.js';
+import totalSum from './HappyNum.js';
 
 let total = 0;
-console.time();
 
 const isHappy = (num) => {
   let sum = num;
@@ -27,7 +26,7 @@ const isHappy = (num) => {
       run = false;
     }
 
-    sum = singleDigit(sum);
+    sum = totalSum(sum);
   }
 }
 
@@ -36,35 +35,6 @@ const isHappy = (num) => {
 for (let i = 1; i <= 1000000; i++) {
   isHappy(i);
 }
-
-console.timeEnd();
-console.log('results:', total);
-
-
-let fetchData = {
-  method: 'POST',
-  body: total,
-  mode: 'no-cors',
-  headers: new Headers( {
-    "Access-Control-Expose-Headers": '*',
-    "Content-Type": "text/plain",
-    "X-COOL-SUM": total,
-  })
-};
-
-// Code10: That's not a cool sum.
-fetch('http://dev.getethos.com/code15', fetchData).then(function(res) {
-  console.log(fetchData.headers.get('X-COOL-SUM'));
-  if(res.ok) {
-    console.log('success', res, total);
-  } else {
-    var error = new Error(res.statusText);
-    error.response = res;
-    throw error;
-  }
-}).catch(function(err) {
-  console.log('err', err);
-});
 
 
 
