@@ -15,7 +15,7 @@ module.exports = function (wallaby) {
 
   return {
     files: [
-      'src/**/*.js',
+      'src/**/*.eslintrc.js',
       '!src/**/*.test.js'
     ],
 
